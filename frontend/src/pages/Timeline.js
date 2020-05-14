@@ -31,11 +31,6 @@
       io.on('tweet', data => {
         setTweets([data, ...tweets]);
       });
-
-      io.on('like', data => {
-        console.log(data._id)
-        setTweets([tweets.map(tweet => tweet._id === data._id ? data : tweet)]);
-      });
     }
 
     subscribeToEvents();
