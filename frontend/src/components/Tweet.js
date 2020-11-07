@@ -1,19 +1,19 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 import api from '../services/api';
 
 import './Tweet.css';
-import likeImg from '../like.svg';
+import likeImg from '../assets/like.svg';
 
 function Tweet(props) {
-
-  const { tweet } = props;
+  const {tweet} = props;
 
   async function handleLike() {
     await api.post(`likes/${tweet._id}`);
   }
 
-  return(
+  return (
     <li className="tweet">
       <strong>{tweet.author}</strong>
       <p>{tweet.content}</p>
